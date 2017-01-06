@@ -1,4 +1,5 @@
 <div class="white">
+  <%= User.find(@post.user_id).email %>
   <%= image_tag(@post.image.url(:medium)) %>
   <br>
   <%= @post.description %>

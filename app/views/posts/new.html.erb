@@ -1,6 +1,8 @@
 <h2>New Post</h2>
 <hr>
-
+<% if user_signed_in? %>
+  <%= current_user.email %>
+<% end %>
 <%= form_for @post, html: {multipart: true} do |f| %>
   <%= f.label :image %>
   <%= f.file_field :image %>

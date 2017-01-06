@@ -23,21 +23,28 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
+                <% if current_user %>
                   <li>
                       <%= link_to "New Post", new_post_path %>
                   </li>
-                  <%- if current_user %>
+                <% end %>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <%- if current_user %>
+                  <li style="float:right;">
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete, confirm: "Are you sure?" %>
                     <li>
-                      <%= link_to "Logout", destroy_user_session_path, method: :delete, confirm: "Are you sure?" %>
+                      <%= link_to "Profile", edit_user_registration_path %>
                     </li>
-                  <% else %>
-                    <li>
-                      <%= link_to "Login", new_user_session_path %>
-                    </li>
-                    <li>
-                      <%= link_to "Register", new_user_registration_path %>
-                    </li>
-                  <% end %>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to "Login", new_user_session_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Register", new_user_registration_path %>
+                  </li>
+                <% end %>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
