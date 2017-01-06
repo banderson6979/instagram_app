@@ -10,8 +10,10 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 # easy file attachment for ActiveRecord
 gem "paperclip", "~> 5.0.0"
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# postgresql as the database for Active Record
+gem 'pg'
+# Static assets serving and logging on Heroku
+gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
